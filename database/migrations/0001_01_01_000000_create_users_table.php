@@ -16,6 +16,8 @@ return new class extends Migration
             $table->enum('status', ['active', 'suspended', 'banned'])->default('active');
             $table->string('country', 2)->nullable();
             $table->timestamp('last_login_at')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();    
             $table->timestamps();
         });
     }
