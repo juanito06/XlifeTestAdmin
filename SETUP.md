@@ -1,37 +1,64 @@
 # XLife Admin API — Setup
 
 ## Requisitos
-- PHP 8.2+
+- PHP 8.2+ (recomendado)
 - Composer 2.x
 
 ---
 
-## Windows (PowerShell)
+## Windows PowerShell AND VSC
 
 composer install
+
 cp .env.example .env
+
 php artisan key:generate
+
 php artisan migrate --seed
+
 php artisan l5-swagger:generate
+
 php artisan serve
 
-## Linux / macOS
+## Linux y macOS
 
 composer install
+
 cp .env.example .env
+
 php artisan key:generate
+
 chmod -R 775 storage bootstrap/cache
+
 php artisan migrate --seed
+
 php artisan l5-swagger:generate
+
 php artisan serve
 
 ---
 
-## Verificación
+## Verificación servidores en local 
 
-| URL | Resultado esperado |
-|-----|--------------------|
-| http://localhost:8000/api/users | Lista de usuarios paginada |
-| http://localhost:8000/api/stats/overview | KPIs en tiempo real |
-| http://localhost:8000/api/users/99999 | {"message":"Risorsa non trovata"} |
-| http://localhost:8000/api/documentation | Swagger UI interactivo |
+http://localhost:8000/api/documentation#/
+
+http://localhost:8000/
+
+## Tambien Podemos verificar la migracion de datos a la BD 
+
+http://localhost:8000/api/stats/geographic
+
+http://localhost:8000/api/users
+
+http://localhost:8000/api/posts
+
+http://localhost:8000/api/comments
+
+http://localhost:8000/api/reports
+
+http://localhost:8000/api/reports/summary
+
+## asi sucesivamente ir observando que migren correctamente, para conocer el resto de URLs 
+
+http://localhost:8000/api/documentation#/
+
