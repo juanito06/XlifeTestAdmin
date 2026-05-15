@@ -1,0 +1,469 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "XLife Admin API",
+        "description": "API REST para el Panel de Administración de XLife",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Servidor local"
+        }
+    ],
+    "paths": {
+        "/api/comments": {
+            "get": {
+                "tags": [
+                    "Contenido"
+                ],
+                "summary": "Lista de comentarios",
+                "operationId": "2e2597016871fa5dd2bdfccf912edc41",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista paginada de comentarios"
+                    }
+                }
+            }
+        },
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Contenido"
+                ],
+                "summary": "Lista de posts",
+                "operationId": "3fda362e2e082b5357ac416e7767e435",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista paginada de posts"
+                    }
+                }
+            }
+        },
+        "/api/reports": {
+            "get": {
+                "tags": [
+                    "Moderación"
+                ],
+                "summary": "Lista de reportes",
+                "operationId": "ff83498294a9277f092f65a52c58fbc5",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista paginada de reportes"
+                    }
+                }
+            }
+        },
+        "/api/reports/summary": {
+            "get": {
+                "tags": [
+                    "Moderación"
+                ],
+                "summary": "Resumen de reportes por tipo",
+                "operationId": "3a2f881744aa1af17114740501546356",
+                "responses": {
+                    "200": {
+                        "description": "Conteo de reportes por tipo"
+                    }
+                }
+            }
+        },
+        "/api/security/logs": {
+            "get": {
+                "tags": [
+                    "Seguridad"
+                ],
+                "summary": "Logs de seguridad",
+                "operationId": "3391f8947c2c0346fabd949d11fe0f13",
+                "parameters": [
+                    {
+                        "name": "severity",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista paginada de logs"
+                    }
+                }
+            }
+        },
+        "/api/security/blocked-ips": {
+            "get": {
+                "tags": [
+                    "Seguridad"
+                ],
+                "summary": "IPs bloqueadas",
+                "operationId": "2e301b6b58c9db875dd1ed4145bb0657",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de IPs bloqueadas"
+                    }
+                }
+            }
+        },
+        "/api/security/blocked-phones": {
+            "get": {
+                "tags": [
+                    "Seguridad"
+                ],
+                "summary": "Teléfonos bloqueados",
+                "operationId": "441a5f0e8a3b19bc2a5e62cef3e2da5b",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de teléfonos bloqueados"
+                    }
+                }
+            }
+        },
+        "/api/security/settings": {
+            "get": {
+                "tags": [
+                    "Seguridad"
+                ],
+                "summary": "Configuración global de seguridad",
+                "operationId": "4f4f498891191c61e62095ea33ac15f1",
+                "responses": {
+                    "200": {
+                        "description": "Configuración de seguridad"
+                    }
+                }
+            }
+        },
+        "/api/stats/overview": {
+            "get": {
+                "tags": [
+                    "Estadísticas"
+                ],
+                "summary": "KPIs principales de la plataforma",
+                "operationId": "f9225fb2d9b071848308e4a5d451f8d9",
+                "responses": {
+                    "200": {
+                        "description": "Totales en tiempo real"
+                    }
+                }
+            }
+        },
+        "/api/stats/user-growth": {
+            "get": {
+                "tags": [
+                    "Estadísticas"
+                ],
+                "summary": "Crecimiento de usuarios por rango",
+                "operationId": "54e213419a094c579f7fca4ca659955b",
+                "parameters": [
+                    {
+                        "name": "range",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "day",
+                                "week",
+                                "month",
+                                "year"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Datos de crecimiento"
+                    }
+                }
+            }
+        },
+        "/api/stats/geographic": {
+            "get": {
+                "tags": [
+                    "Estadísticas"
+                ],
+                "summary": "Distribución geográfica de usuarios",
+                "operationId": "5c041c2b189f3274e859ea49987ccaff",
+                "responses": {
+                    "200": {
+                        "description": "Usuarios por país"
+                    }
+                }
+            }
+        },
+        "/api/stats/viral-posts": {
+            "get": {
+                "tags": [
+                    "Estadísticas"
+                ],
+                "summary": "Posts ordenados por viral score",
+                "operationId": "35d25ec1da808641da221ef3fb4be47f",
+                "parameters": [
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Posts virales paginados"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Lista de usuarios",
+                "operationId": "566aed8efb436ca506e0ef51a032ecd9",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista paginada de usuarios"
+                    }
+                }
+            }
+        },
+        "/api/users/{id}": {
+            "get": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Detalle de un usuario",
+                "operationId": "6f51bd5fa2dddcd25e44cfa53dcbd10a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detalle del usuario"
+                    },
+                    "404": {
+                        "description": "Risorsa non trovata"
+                    }
+                }
+            }
+        },
+        "/api/users/{id}/posts": {
+            "get": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Posts de un usuario",
+                "operationId": "f5545b9c42d006ceadea02237c966207",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista paginada de posts del usuario"
+                    },
+                    "404": {
+                        "description": "Risorsa non trovata"
+                    }
+                }
+            }
+        },
+        "/api/users/{id}/activity": {
+            "get": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Actividad por hora de un usuario (24 puntos)",
+                "operationId": "aa55e67befb87a7e08ab96f613beb3d6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "24 puntos de actividad por hora"
+                    },
+                    "404": {
+                        "description": "Risorsa non trovata"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Contenido",
+            "description": "Contenido"
+        },
+        {
+            "name": "Moderación",
+            "description": "Moderación"
+        },
+        {
+            "name": "Seguridad",
+            "description": "Seguridad"
+        },
+        {
+            "name": "Estadísticas",
+            "description": "Estadísticas"
+        },
+        {
+            "name": "Usuarios",
+            "description": "Usuarios"
+        }
+    ]
+}
