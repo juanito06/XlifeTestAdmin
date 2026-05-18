@@ -1,12 +1,16 @@
-# XLife Admin API — Setup
+###### XLife Admin API — Setup#
+### clone the repository 
 
-## Requisitos
-- PHP 8.2+ (recomendado)
-- Composer 2.x
+gh repo clone juanito06/XlifeTestAdmin
+
+
+## requirements
+PHP 8.2+ (recomendado)
+Composer 2.x
 
 ---
 
-## Windows PowerShell AND VSC
+## Windows PowerShell,VSC
 
 composer install
 
@@ -38,13 +42,14 @@ php artisan serve
 
 ---
 
-## Verificación servidores en local 
+## verify local servers 
 
 http://localhost:8000/api/documentation#/
 
 http://localhost:8000/
 
-## Tambien Podemos verificar la migracion de datos a la BD 
+
+##  verify migration to the database
 
 http://localhost:8000/api/stats/geographic
 
@@ -58,7 +63,8 @@ http://localhost:8000/api/reports
 
 http://localhost:8000/api/reports/summary
 
-## asi sucesivamente ir observando que migren correctamente, para conocer el resto de URLs 
+## swagger documentation
 
 http://localhost:8000/api/documentation#/
+
 
